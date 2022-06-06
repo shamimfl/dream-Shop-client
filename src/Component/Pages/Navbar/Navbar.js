@@ -36,17 +36,7 @@ const Navbar = () => {
                     <p className='font-bold mr-5 block mb-2  rounded-sm'>{user?.displayName}</p>
                     <Link className='font-bold mr-5 block mb-2' to={'/home'}>Home</Link>
                     <Link className='font-bold mr-5 block mb-2' to={'/'}>Contact</Link>
-                    <Link className='font-bold mr-5 block mb-2' to={'/dashboard'}>Dashboard</Link>
-                    <Link className=' text-pink-400 mr-5 mb-2' to={'/user'}>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-                        </svg>
-                    </Link>
-                    <Link className='text-pink-400 mr-5 mb-2' to='/cart'>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </Link>
+                    <Link className='font-bold mr-5 block mb-2' to={'/dashboard'}>Dashboard</Link
                     {
                         user? <button onClick={logout} className='font-bold mr-5 block mb-2'>Log out</button> : <Link className='font-bold mr-5 block mb-2' to={'/login'}>Login</Link>
                     }
