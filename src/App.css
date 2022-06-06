@@ -1,0 +1,19 @@
+.title {
+  /* text-align: center; */
+  font-family: 'Lobster', cursive;
+  font-family: 'Satisfy', cursive;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.bg-s{
+  background-color: rgb(187, 187, 187);
+}
+/* .electronics{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+} */
+.div{
+  background-color: azure;
+}
