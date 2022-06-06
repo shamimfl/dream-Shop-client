@@ -20,7 +20,7 @@ const AddReviue = () => {
 
     return (
         <div className='flex justify-center'>
-            <form className='p-5 w-2/4' onSubmit={handleSubmit(onSubmit)}>
+            <form className='p-5 shadow-md lg:w-2/4' onSubmit={handleSubmit(onSubmit)}>
                 <input type='text' {...register("name", { required: true })} className='p-2 shadow border-b-2 border-pink-400 focus:outline-none font-bold shadow-slate-200 block w-full mb-5' placeholder='Enter Your Name' />
                 <input type='Email' {...register("email", { required: true })} className='p-2 shadow border-b-2 border-pink-400 focus:outline-none font-bold shadow-slate-200 block w-full mb-5' placeholder='Enter your Email' />
                 <textarea type='text' {...register("comment", { required: true })} className='p-2 shadow border-b-2 border-pink-400 focus:outline-none font-bold shadow-slate-200 block w-full mb-5' placeholder='Comment' />

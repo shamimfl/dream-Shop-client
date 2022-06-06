@@ -51,7 +51,7 @@ const ManageOrder = () => {
         .then(data=> console.log(data))
     }
     return (
-        <div className='bg-white flex justify-around p-10'>
+        <div className='bg-white lg:flex justify-around p-10'>
             <img className='h-96' src={data?.img} alt="" />
             <div className='mt-20 p-5 shadow-lg text-center'>
                 <p className='text-xl font-semibold text-pink-400'>Product Name:{data?.productName}</p>

@@ -28,7 +28,7 @@ const AddProduct = () => {
 
     return (
         <div className='flex justify-center '>
-            <form className='p-5 w-2/4' onSubmit={handleSubmit}>
+            <form className='p-5 lg:w-2/4 shadow-md' onSubmit={handleSubmit}>
                 <h1 className='text-center text-pink-400 text-xl font-bold'>Add product</h1>
                 <select name="type" className='p-2 w-full border-b-2 focus:outline-none font-bold'>
                     <option value="electronics">Electronics</option>

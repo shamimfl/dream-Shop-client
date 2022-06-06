@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
 import Loading from '../Loading/Loading';
 
 const Login = () => {
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
     const navigate =useNavigate()
     const [
         signInWithEmailAndPassword,
@@ -14,14 +16,14 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
-      const [signInWithGoogle] =useSignInWithGoogle(auth)
+      const [signInWithGoogle, guser] =useSignInWithGoogle(auth)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     };
-    if(user){
-        navigate('/')
+    if(user || guser){
+        navigate(from, { replace: true })
     }
     if(loading){
         return <Loading></Loading>
