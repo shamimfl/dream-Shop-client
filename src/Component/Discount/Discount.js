@@ -17,7 +17,7 @@ const Discount = () => {
         const name =e.target.name.value;
         const price = e.target.price.value;
         const data ={img, name, price}
-        const url =`http://localhost:5000/discount`
+        const url =`https://shrouded-gorge-42076.herokuapp.com/discount`
         fetch(url,{
             method: "POST",
             headers:{
@@ -31,7 +31,7 @@ const Discount = () => {
     }
 
     // fetch discount data 
-    const url =`http://localhost:5000/discount`
+    const url =`https://shrouded-gorge-42076.herokuapp.com/discount`
     const { isLoading, error, data, refetch } = useQuery('discount', () => fetch(url).then(res => res.json()))
     if(isLoading){
         return <Loading></Loading>

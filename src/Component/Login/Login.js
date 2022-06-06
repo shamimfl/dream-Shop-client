@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
@@ -13,6 +13,8 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+
+      const [signInWithGoogle] =useSignInWithGoogle(auth)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -37,7 +39,7 @@ const Login = () => {
                 </span> : ''}</p>
                 <span className='flex justify-center mt-5 mb-5'>
                     <img className='h-10 w-10 mx-5  border-2 border-pink-400 rounded-full cursor-pointer' src="https://img.icons8.com/fluency/2x/facebook-new.png" alt="" />
-                    <img className='h-10 w-10 mx-5 border-2 border-pink-400 rounded-full cursor-pointer' src="https://img.icons8.com/fluency/2x/google-logo.png" alt="" />
+                    <img onClick={()=>signInWithGoogle()} className='h-10 w-10 mx-5 border-2 border-pink-400 rounded-full cursor-pointer' src="https://img.icons8.com/fluency/2x/google-logo.png" alt="" />
                 </span>
                 <form className='p-5' onSubmit={handleSubmit(onSubmit)}>
                     <input type='email' {...register("email", { required: true })} className='p-2 shadow border-b-2 border-pink-400 focus:outline-none font-bold shadow-slate-200 block w-full mb-5' placeholder='Enter Your Email' />
@@ -46,7 +48,6 @@ const Login = () => {
                     <span className='flex justify-center'><input className='block rounded-md cursor-pointer text-white font-bold uppercase px-4 py-1 bg-pink-400' type="submit" /></span>
                     </form>
                     <span>
-                        <Link className='block font-semibold  text-red-500 mb-2' to='/reset'>Forgate password</Link>
                         <Link className='block font-semibold  text-pink-400' to='/singup'>Create new account</Link>
                     </span>
             </div>

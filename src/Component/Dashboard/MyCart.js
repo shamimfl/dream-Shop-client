@@ -6,7 +6,7 @@ import Loading from '../Loading/Loading';
 
 const MyCart = () => {
     const [user, loading, eerror] = useAuthState(auth);
-    const url = `http://localhost:5000/myorder?email=${user?.email}`
+    const url = `https://shrouded-gorge-42076.herokuapp.com/myorder?email=${user?.email}`
 
     const { isLoading, error, data, refetch } = useQuery('samgsung', () => fetch(url).then(res => res.json()))
     refetch()

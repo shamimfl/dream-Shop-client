@@ -14,7 +14,7 @@ import "./style.css";
 import { EffectCoverflow, Pagination } from "swiper";
 
 const Reviue = () => {
-    const url = `http://localhost:5000/reviue`
+    const url = `https://shrouded-gorge-42076.herokuapp.com/reviue`
     const { isLoading, error, data, refetch } = useQuery('reviue', () => fetch(url).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>

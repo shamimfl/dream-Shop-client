@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
 
 const Symphony = () => {
-    const url =`http://localhost:5000/symphony`
+    const url =`https://shrouded-gorge-42076.herokuapp.com/symphony`
     const { isLoading, error, data, refetch } = useQuery('symphony', () => fetch(url).then(res => res.json()))
     refetch()
     if(isLoading){

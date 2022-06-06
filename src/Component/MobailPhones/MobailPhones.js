@@ -10,7 +10,7 @@ const handleAddphone=e=>{
     const price =e.target.price.value;
     const data ={brand , name , price, img}
     console.log(data)
-    const url =`http://localhost:5000/phones`
+    const url =`https://shrouded-gorge-42076.herokuapp.com/phones`
     fetch(url,{
         method: "POST",
         headers:{

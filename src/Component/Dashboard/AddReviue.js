@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 const AddReviue = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data =>{
-        const url =`http://localhost:5000/reviue`
+        const url =`https://shrouded-gorge-42076.herokuapp.com/reviue`
         fetch(url,{
             method: "POST",
             headers:{

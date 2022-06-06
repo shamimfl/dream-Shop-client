@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 
 const Decoration = () => {
     const navigate =useNavigate()
-    const url = `http://localhost:5000/decoration`
+    const url = `https://shrouded-gorge-42076.herokuapp.com/decoration`
     const { isLoading, error, data, refetch } = useQuery('decoration', () => fetch(url).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>

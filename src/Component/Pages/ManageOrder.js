@@ -9,7 +9,7 @@ const ManageOrder = () => {
     const [user, loading, errors]=useAuthState(auth)
     const [quentity, setQuentity] = useState(1)
     const { _id } = useParams()
-    const url = `http://localhost:5000/manageorder/${_id}`
+    const url = `https://shrouded-gorge-42076.herokuapp.com/manageorder/${_id}`
     const { isLoading, error, data, refetch } = useQuery('parts', () =>
         fetch(url).then(res =>
             res.json()
@@ -39,7 +39,7 @@ const ManageOrder = () => {
         const address = e.target.address.value;
         const data ={product, name, quentity, price, email, phone ,address }
         console.log(data)
-        const url =`http://localhost:5000/order`
+        const url =`https://shrouded-gorge-42076.herokuapp.com/order`
         fetch(url,{
             method: "POST",
             headers :{

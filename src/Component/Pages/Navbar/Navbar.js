@@ -33,7 +33,7 @@ const Navbar = () => {
                 </div>
                 <ul className={`md:flex div pl-5  mt-3 justify-end items-center absolute  md:static w-full duration-500 ease-in ${open ? 'right-0' : 'right-[1200px]'}`}>
                     <img className='w-15 h-14 mr-3 rounded-full' src={user?.photoURL} alt="" />
-                    <p className='font-bold mr-5 block mb-2 bg-pink-300 px-2 rounded-sm'>{user?.displayName}</p>
+                    <p className='font-bold mr-5 block mb-2  rounded-sm'>{user?.displayName}</p>
                     <Link className='font-bold mr-5 block mb-2' to={'/home'}>Home</Link>
                     <Link className='font-bold mr-5 block mb-2' to={'/'}>Contact</Link>
                     <Link className='font-bold mr-5 block mb-2' to={'/dashboard'}>Dashboard</Link>

@@ -11,7 +11,7 @@ const AddProduct = () => {
         const img = e.target.img.value;
         const shop = e.target.shop.value;
         const data = {type, price, productName, quentity, img, shop}
-        const url =`http://localhost:5000/product`
+        const url =`https://shrouded-gorge-42076.herokuapp.com/product`
         fetch(url,{
             method: "POST",
             headers :{

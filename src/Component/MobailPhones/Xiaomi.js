@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
 
 const Xiaomi = () => {
-    const url =`http://localhost:5000/xiaomi`
+    const url =`https://shrouded-gorge-42076.herokuapp.com/xiaomi`
     const { isLoading, error, data, refetch } = useQuery('xiaomi', () => fetch(url).then(res => res.json()))
     refetch()
     if(isLoading){
